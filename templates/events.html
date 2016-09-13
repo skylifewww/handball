@@ -1,0 +1,263 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+{% load i18n mptt_tags %}
+{% load thumbnail %}
+
+{% block events %}    
+
+ <!--========================================================
+                            HEADER
+  =========================================================-->
+    
+    <header class="head1">  
+      
+      <div id="stuck_container" class="stuck_container">
+        <nav class="navbar navbar-default navbar-static-top ">
+          <div class="container"> 
+
+            <div class="">  
+              <ul class="navbar-nav sf-menu" data-type="navbar">
+                <li>
+                   <a href="/">Home</a>
+                </li>
+                <li class="dropdown">
+                  <a href="/about/">О нас</a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#">История </a>
+                    </li>
+                    <li>
+                      <a href="#">Наше предложение </a>                      
+                    </li>
+                    <li>
+                      <a href="#">Новости</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="#">Свежие</a>
+                          </li>
+                          <li>
+                            <a href="#">Архив</a>
+                          </li>                      
+                        </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="/gallery/">Галлерея</a>
+                </li>
+                <li class="active">
+                  <a href="/events/">События</a>
+                </li>
+                
+                <li>
+                  <a href="/contact/">Контакты</a>
+                </li>
+              </ul>                           
+            </div>
+
+          </div>
+        </nav>
+      </div>  
+
+      <section class="well well1">
+        <div class="container">
+          <div class="navbar-header line1">
+            <h1 class="navbar-brand">
+               <a  href="/">гандбол<br />
+                <small class="small-lines">мы ждем вас!</small>
+              </a>
+            </h1>
+          </div>
+        </div>
+      </section>
+    </header>
+
+  <!--========================================================
+                            CONTENT
+  =========================================================-->
+
+    <main>        
+
+      <section class="well well6">
+        <div class="container">
+          <h3 class="text-center">
+            latest news
+          </h3>
+          <div class="row offs1">
+
+            <div class="col-sm-6 col-xs-12">
+              <div class="thumbnail-1">
+                <img src="images/page-4_img1.jpg" alt="">
+                <div class="caption">
+                  <time datetime='2015'> 04 / 05<span> / 2015</span></time>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend sed nisl ut dapibus. Curabitur quis accumsan dolor. Nullam dui nulla, placerat vel diam quis, facilisis consequat metus. Curabitur sed arcu eu sem varius congue non at ligula. Nam sollicitudin eros sit amet ultricies tempus. Vivamus faucibus sollicitudin quam sit amet efficitur. 
+                  </p>
+                  <a href="#" class="btn btn-primary btn-left">read more</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xs-12">
+              <div class="thumbnail-1">
+                <img src="images/page-4_img2.jpg" alt="">
+                <div class="caption">
+                  <time datetime='2015'> 06 / 06<span> / 2015</span></time>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend sed nisl ut dapibus. Curabitur quis accumsan dolor. Nullam dui nulla, placerat vel diam quis, facilisis consequat metus. Curabitur sed arcu eu sem varius congue non at ligula. Nam sollicitudin eros sit amet ultricies tempus. Vivamus faucibus sollicitudin quam sit amet efficitur. 
+                  </p>
+                  <a href="#" class="btn btn-primary btn-left">read more</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="well well10 parallax" data-url="images/parallax4.jpg" data-mobile="true">
+        <div class="container text-center">
+          <div class="jumbotron">
+            <h3>
+              what’s new?
+            </h3>
+            <h5>
+              Quam rhoncus ultricies nisl, nec tempor ante ullamcorper quis.
+            </h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend sed nisl ut dapibus. Curabitur quis accumsan dolor. Nullam dui nulla, placerat vel diam quis, facilisis consequat metus. Curabitur sed arcu eu sem varius congue non at ligula. Nam sollicitudin eros sit amet ultricies tempus. Vivamus faucibus sollicitudin quam sit amet efficitur. Integer luctus aliquam dui sit amet hendrerit. Curabitur laoreet velit est, quis tempus tortor pellentesque vitae. Mauris tempus rutrum tempus. Proin sit amet neque efficitur.
+            </p>
+            <a href="#" class="btn btn-primary">read more</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="well well7">
+        <div class="container center767">
+          <h3 class="text-center">
+            featured events
+          </h3>
+          <div class="row offs1">
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <img src="images/page-4_img3.jpg" alt="">
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class=" mwidth">
+              <time datetime='2015'> 04 / 05<span> / 2015</span></time>
+              <p class="text-info">
+                Suspendisse mi nisi, aliquet et turpis eu, egestas vulputate est. Pellentesque condimentum quam tortor, quis.
+              </p>
+              <p class="">
+                Suspendisse mi nisi, aliquet et turpis eu, egestas vulputate est. Pellentesque con
+                dimentum quam tortor, quis elementum libero tempus at. 
+              </p>
+            </div>  
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12 clear-flt">
+              <img src="images/page-4_img4.jpg" alt="">
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class=" mwidth">
+              <time datetime='2015'> 07 / 08<span> / 2015</span></time>
+              <p class="text-info">
+                Nullam dui nulla, placerat vel diam quis, facilisis consequat metus. Curabitur sed arcu eu sem varius congue non at ligula. 
+              </p>
+              <p class="">
+                Integer vulputate, dui vel vehicula ultrices, odio lectus pulvinar metus, varius maximus libero magna a magna. Ut vehicula ante metus, vitae ege.
+              </p>
+            </div>  
+            </div>
+          
+          </div>  
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <img src="images/page-4_img5.jpg" alt="">
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class=" mwidth">
+              <time datetime='2015'> 05 / 06<span> / 2015</span></time>
+              <p class="text-info">
+                Nullam dui nulla, placerat vel diam quis, facilisis consequat metus. Curabitur sed arcu eu sem varius congue non at ligula. 
+              </p>
+              <p class="">
+                Suspendisse mi nisi, aliquet et turpis eu, egestas vulputate est. Pellentesque con
+                dimentum quam tortor, quis elementum libero tempus at. Nunc condiment.
+              </p>
+            </div>  
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12 clear-flt">
+              <img src="images/page-4_img6.jpg" alt="">
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class=" mwidth">
+              <time datetime='2015'> 08 / 09<span> / 2015</span></time>
+              <p class="text-info">
+                Curabitur sed arcu eu sem varius congu
+                e non at ligula. Nam sollicitudin eros sit amet ultricies tempus.
+              </p>
+              <p class="">
+                Nunc condimentum tortor in purus placmetus, varius maximus libero magna a egestas risus pretium mollis. Donec tin
+                cidunt metus vel rut.
+              </p>
+            </div>  
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      <section class="well well7 well7_ins1 parallax" data-url="images/parallax5.jpg" data-mobile="true">
+        <div class="container">
+          
+            <h3 class="text-center">
+              news archives
+            </h3>
+          <div class="row offs1">
+            <div class="col-xs-4">
+              <ul class="marked-list offs2">
+                <li><a href="#">January 2014</a></li>
+                <li><a href="#">February 2014</a></li>
+                <li><a href="#">March 2014</a></li>
+                <li><a href="#">April 2014</a></li>
+                <li><a href="#">May 2014</a></li>
+                <li><a href="#">June 2014</a></li>                
+              </ul>
+            </div>
+            <div class="col-xs-4">
+              <ul class="marked-list offs2">
+                <li><a href="#">July 2014</a></li>
+                <li><a href="#">August 2014</a></li>
+                <li><a href="#">September 2014</a></li>
+                <li><a href="#">October 2014</a></li>
+                <li><a href="#">November 2014</a></li>
+                <li><a href="#">December 2014</a></li>                
+              </ul>
+            </div>
+            <div class="col-xs-4">
+              <ul class="marked-list offs2">
+                <li><a href="#">January 2013</a></li>
+                <li><a href="#">February 2013</a></li>
+                <li><a href="#">March 2013</a></li>
+                <li><a href="#">April 2013</a></li>
+                <li><a href="#">May 2013</a></li>
+                <li><a href="#">June 2013</a></li>                
+              </ul>
+            </div>
+          </div>    
+          
+        </div>
+      </section>
+
+    </main>
+
+    <!--========================================================
+                            FOOTER
+  =========================================================-->
+  <footer class="foot1 parallax" data-url="images/parallax1.jpg" data-mobile="true" data-direction="inverse">
+{% endblock %}

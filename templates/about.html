@@ -1,0 +1,441 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+{% load i18n mptt_tags %}
+{% load thumbnail %}
+
+{% block about %}    
+
+ <!--========================================================
+                            HEADER
+  =========================================================-->
+    
+    <header class="head1">  
+      
+      <div id="stuck_container" class="stuck_container">
+        <nav class="navbar navbar-default navbar-static-top ">
+          <div class="container"> 
+
+            <div class="">  
+              <ul class="navbar-nav sf-menu" data-type="navbar">
+                <li>
+                   <a href="/">Home</a>
+                </li>
+                <li class="dropdown active">
+                  <a href="/about/">О нас</a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#">История </a>
+                    </li>
+                    <li>
+                      <a href="#">Наше предложение </a>                      
+                    </li>
+                    <li>
+                      <a href="#">Новости</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="#">Свежие</a>
+                          </li>
+                          <li>
+                            <a href="#">Архив</a>
+                          </li>                      
+                        </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="/gallery/">Галлерея</a>
+                </li>
+                <li>
+                  <a href="/events/">События</a>
+                </li>
+                
+                <li>
+                  <a href="/contact/">Контакты</a>
+                </li>
+              </ul>                           
+            </div>
+
+          </div>
+        </nav>
+      </div>  
+
+      <section class="well well1">
+        <div class="container">
+          <div class="navbar-header line1">
+            <h1 class="navbar-brand">
+               <a  href="/">гандбол<br />
+                <small class="small-lines">мы ждем вас!</small>
+              </a>
+            </h1>
+          </div>
+        </div>
+      </section>
+    </header>
+
+
+ <main> 
+
+
+      <section class="well well6">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <h3 class="text-center">
+                about us
+              </h3>
+              <img class="wow fadeInLeft" data-wow-duration='1s' src="images/page-2_img2.jpg" alt="">
+              <p class="text-info">
+                Nullam dui nulla, placerat vel diam quis, facilisis consequat metus. Curabitur sed arcu eu sem varius congue non at ligula. Nam sollicitudin eros sit amet ultricies tempus. Integer luctus aliquam dui sit amet hendrerit. Curabitur laoreet velit est, quis tempus tortor pellentesque vitae. 
+              </p>
+              <p>
+                Curabitur laoreet velit est, quis tempus tortor pellentesque vitae. Mauris tempus rutrum tempus. Proin sit amet neque efficitur nisi placerat egestas in rutrum libero. Vestibulum efficitur egestas lorem ultricies luctus. 
+              </p>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <h3 class="text-center">
+               history
+              </h3>
+
+              <article>
+                <time datetime='2015'> 01 / 02<span> / 2012</span></time>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend sed nisl ut dapibus. Curabitur quis accumsan dolor. Nullam dui nulla, placerat vel diam quis, Nam sollicitudin eros sit amet ultricies tempus. Vivamus faucibus sollicitudin quam.
+                  </p>               
+              </article>
+
+              <article>
+                <time datetime='2015'>02 / 03<span> / 2013</span></time>
+                  <p>
+                   Aenean pharetra sapien quis rutrum suscipit. Aliquam at libero euismod, vestibulum orci in, dapibus turpis. Lorem ipsum dolor sit amet, consectetur adipiscing malesuada tellus neque, nec lobortis dolor egestas et. Sed porttitor placerat euismod. 
+                  </p>
+              </article>
+
+              <article>
+                <time datetime='2015'>03 / 04<span> / 2015</span></time>
+                  <p>
+                    Curabitur sed arcu eu sem varius congue non at ligula. Nam sollicitudin eros sit amet ultricies tempus. Vivamus faucibus sollicitudin quam sit amet efficitur. Integer luct
+                    us aliquam dui sit amet hendrerit. Curabitur laoreet velit pellentesque vitae. 
+                  </p>
+              </article>
+
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <h3 class="text-center">
+                Benefits
+              </h3>
+              <p class="text-info offs1">
+                Praesent vestibulum aenean nonummy endrerit 
+                mauris. Cum sociis natoque Magnis dis parturient montes. Ascetur ridiculus mus. Nulla du. 
+              </p>
+              <ul class="marked-list">                
+                <li>
+                  <a href="#">
+                    Praesent vestibulum aenean nonummy 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Cum sociis natoque magnis dis 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Ascetur ridiculus musfsce feugiatmale 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Morbi nunc odio gravida at cursus 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Maecenas tristique orci ac sem uis
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Magna onec accumsan malesuada 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Lorem ipsum dolor sit amet
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Mauris fermentum dictum magna
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Sed laoreet aliquam leo
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Ut tellus dolor, dapibus eget, elementum 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Aenean auctor wisi et urna
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Aliquam erat volutpat duis ac turpis
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Integer rutrum ante eu lacus
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="well well7 parallax" data-url="images/parallax2.jpg" data-mobile="true" data-direction="inverse">
+        <div class="container">
+        <h3 class="h3 text-center">
+          Our coaches
+        </h3>
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="thumbnail thumbnail-1">
+                <img class="" src="images/page-2_img3.jpg" alt="">
+                <div class="caption">
+                  <h5>
+                    <a href="#">
+                      Thomas Bishop
+                    </a>
+                  </h5>
+                  <p>
+                    Praesent vestibulum aenean nonummy 
+                    endrerit mauris. Cum sociis natoque 
+                    Magnis dis parturient montes. Ascetur 
+                    ridiculus mus. Nulla du. 
+                  </p>
+                </div>  
+             </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="thumbnail thumbnail-1">
+                <img class="" src="images/page-2_img4.jpg" alt="">
+                <div class="caption">
+                  <h5>
+                    <a href="#">
+                      Eva Adamson
+                    </a>
+                  </h5>
+                  <p>
+                    Praesent vestibulum aenean nonummy 
+                    endrerit mauris. Cum sociis natoque 
+                    Magnis dis parturient montes. Ascetur 
+                    ridiculus mus. Nulla du. 
+                  </p>
+                </div>  
+             </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="thumbnail thumbnail-1">
+                <img class="" src="images/page-2_img5.jpg" alt="">
+                <div class="caption">
+                  <h5>
+                    <a href="#">
+                    Sam Kromstain
+                    </a>
+                  </h5>
+                  <p>
+                    Praesent vestibulum aenean nonummy 
+                    endrerit mauris. Cum sociis natoque 
+                    Magnis dis parturient montes. Ascetur 
+                    ridiculus mus. Nulla du. 
+                  </p>
+                </div>  
+             </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="thumbnail thumbnail-1">
+                <img class="" src="images/page-2_img6.jpg" alt="">
+                <div class="caption">
+                  <h5>
+                    <a href="#">
+                    Olivia Grosh
+                    </a>
+                  </h5>
+                  <p>
+                    Praesent vestibulum aenean nonummy 
+                    endrerit mauris. Cum sociis natoque 
+                    Magnis dis parturient montes. Ascetur 
+                    ridiculus mus. Nulla du. 
+                  </p>
+                </div>  
+             </div>
+            </div>
+          </div>
+        </div>
+      </section>    
+
+      <section class="well well8 wow fadeIn" data-wow-duration='3s'>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <h3 class="text-center">
+                awards
+              </h3>
+              <ul class="index-list">
+                <li class="">
+                  
+                    <h5>
+                      <a href="#">                      
+                      Pellentesque eleif
+                      </a>
+                    </h5>
+                  
+                  <p>
+                    Suspendisse mi nisi, aliquet et turpis eu, egestas vulputate est. Pellentesque con
+                    dimentum quam tortor, quis elementum libero tempus at. Nunc condimentum. 
+                  </p>
+                </li>
+                <li class="">
+                 
+                    <h5>
+                      <a href="#">                      
+                      Curabitur acsan 
+                      </a>
+                    </h5>
+                  
+                  <p>
+                    Curabitur sed arcu eu sem varius congue amet ultricies tempus. Vivamus faucibus sollicitudin quam sit amet efficitur. Integer luctus aliquam dui sit amet hendrerit.
+                  </p>
+                </li>
+                <li class="">
+                  
+                    <h5>
+                      <a href="#">                      
+                      Suspendisse mnisi
+                      </a>
+                    </h5>
+                  
+                  <p>
+                    Suspendisse mi nisi, aliquet et turpis eu, egestas vulputate est. Pellentesque con
+                    dimentum quam tortor, quis elementum libero tempus at. Nunc condimentum. 
+                  </p>
+                </li>
+              </ul>  
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <h3 class="text-center">
+                Why us?
+              </h3>
+                <p class="text-info offs1">
+                Curabitur sed arcu eu sem varius congue non at ligula. Nam sollicitudin eros sit amet ultricies tempus. Vivamus faucibus sollicitudin quam sit amet efficitur. Integer luctus aliquam dui sit amet hendrerit. 
+                </p>
+                <ul class="marked-list">                
+                <li>
+                  <a href="#">
+                    Ut tellus dolor, dapibus eget, elementum 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Aenean auctor wisi et urna
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Aliquam erat volutpat duis ac turpis
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Praesent vestibulum aenean nonummy 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Cum sociis natoque magnis dis 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Ascetur ridiculus musfsce feugiatmale 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Morbi nunc odio gravida at cursus 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Maecenas tristique orci ac sem uis
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Magna onec accumsan malesuada 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Lorem ipsum dolor sit amet
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Mauris fermentum dictum magna
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Sed laoreet aliquam leo
+                  </a>
+                </li>               
+              </ul>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <h3 class="text-center">
+               they say
+              </h3>
+              <blockquote>                
+                <div>              
+                  <p>
+                    <q>
+                      Pellentesque con dimentum quam tortor, quis elementum libero tempus at. Nunc condimentum. tortor in purus placerat cursus. Integer vulputate, dui vel vehicula ultrices, odio lectus pulvinar metus, varius maximus libero magna a magna. Ut vehicula ante metus, vitae egestas risus pretium mollis. Donec tincidunt metus vel rutrum porttitor. 
+                    </q>
+                  </p>
+                  <cite class='h5'>
+                    Patrick Pool, USA
+                  </cite>
+                </div>
+              </blockquote>
+              <blockquote>                
+                <div>              
+                  <p>
+                    <q>
+                      Duis viverra ac nisi vitae rhoncus. Pellentesque tincidunt ut orci ac scelerisque. Nunc id justo ac nisl luctus ullamcorper. In vulputate posuere gravida. Nulla dapibus tempor lacus, vel viverra felis tincidunt quis. Donec ut justo erat. Proin in magna luctus enim tempor eleifend iaculis in vestibulum porta quis arcu eu rhoncus. Suspendisse a odio est. 
+                    </q>
+                  </p>
+                  <cite class='h5'>
+                    Jessica Priston, USA
+                  </cite>
+                </div>
+              </blockquote>              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      </main> 
+
+       <footer class="foot1 parallax" data-url="images/parallax1.jpg" data-mobile="true" data-direction="inverse">
+
+{% endblock %}

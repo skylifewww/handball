@@ -1,0 +1,8 @@
+{
+  "name": "handball",
+  "description": "Handball",
+  "image": "heroku/python",
+  "repository": "https://",
+  "keywords": ["handball", "shostka" ],
+  "addons": [ "heroku-postgresql" ]
+}

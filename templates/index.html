@@ -1,0 +1,432 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+{% load i18n mptt_tags %}
+{% load thumbnail %}
+
+{% block index %}
+
+ 
+ <!--========================================================
+                            HEADER
+  =========================================================-->
+    <header class="">  
+      
+      <div id="stuck_container" class="stuck_container">
+        <nav class="navbar navbar-default navbar-static-top ">
+          <div class="container"> 
+
+            <div class="">  
+              <ul class="navbar-nav sf-menu" data-type="navbar">
+                <li class="active">
+                  <a href="/">Home</a>
+                </li>
+                <li class="dropdown">
+                  <a href="/about/">О нас</a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#">История </a>
+                    </li>
+                    <li>
+                      <a href="#">Наше предложение </a>                      
+                    </li>
+                    <li>
+                      <a href="#">Новости</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="#">Свежие</a>
+                          </li>
+                          <li>
+                            <a href="#">Архив</a>
+                          </li>                      
+                        </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="/gallery/">Галлерея</a>
+                </li>
+                <li>
+                  <a href="/events/">События</a>
+                </li>
+                
+                <li>
+                  <a href="/contact/">Контакты</a>
+                </li>
+              </ul>                           
+            </div>
+
+          </div>
+        </nav>
+      </div>  
+
+      <section class="well well1">
+        <div class="container">
+          <div class="navbar-header">
+            <h1 class="navbar-brand">
+              <a  href="/">гандбол<br />
+                <small class="small-lines">мы ждем вас!</small>
+              </a>
+            </h1>
+          </div>
+          <h3 class="text-center line1 fw-n">
+            мы любим <br />
+            гандбол <br />
+          </h3>
+        </div>
+      </section>
+    </header>
+
+<main>    
+
+      <section class="well well2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <h4 class="h4_icon wow fadeInLeft" data-wow-duration='1s'>
+                расписание
+              </h4>
+              <p class="text-info ins1 wow fadeInLeft" data-wow-duration='2s'>
+                Расписание основных игр и событий нашей команды. 
+              </p>
+              <ul class="marked-list">
+                <li>
+                  <a href="#">
+                    Подготовка к осеннему сезону
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Усиленные тренировки 
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Товарищеские встречи
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Тактические учения
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Выступление на региональных играх
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    КУбок Украины
+                  </a>
+                </li>
+              </ul>  
+            </div>
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <h4 class="h4_icon icon2">
+                наш клуб 
+              </h4>
+              <p class="text-info ins1">
+                Наш Клуб был создан для Наш Клуб был создан для Наш Клуб был создан 
+                для Наш Клуб был создан для Наш Клуб был создан для Наш Клуб был 
+                создан для Наш Клуб был создан для 
+              </p>
+              <p class="ins1">
+                Наш Клуб был создан для Наш Клуб был создан для Наш Клуб был создан 
+                для Наш Клуб был создан для Наш Клуб был создан для Наш Клуб был 
+                создан для Наш Клуб был создан для . 
+              </p>
+              <a href="#" class="btn">узнать больше</a>
+            </div>
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <h4 class="h4_icon icon3 wow fadeInRight" data-wow-duration='1s'>
+                тренировки
+              </h4>
+              <p class="text-info ins1 wow fadeInRight" data-wow-duration='2s'>
+                Специально для нашей команды была разработана уникальная система тренировок 
+                Специально для нашей команды была разработана уникальная система тренировок 
+              </p>
+              <p class="ins1">
+                Специально для нашей команды была разработана уникальная система тренировок 
+                Специально для нашей команды была разработана уникальная система тренировок . 
+              </p>
+              <a href="#" class="btn">узнать больше</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="well well3 text-center wow fadeIn" data-wow-duration='3s'>
+        <div class="container">
+          <h2 class="h2_bord">
+            гандбол<br />
+            <span>команда молодости</span>
+            <small class="small-lines small-lines1">нашей!</small>            
+          </h2>
+
+          <p class="text-primary offs3 ins2">
+            Наш Клуб был создан для Наш Клуб был создан для Наш Клуб был создан 
+                для Наш Клуб был создан для Наш Клуб был создан для Наш Клуб был 
+                создан для Наш Клуб был создан для .
+          </p>
+          <a href="#" class="btn btn-primary">узнать больше</a>
+        </div>
+      </section>  
+
+      <section class="well well3 well3_ins1 text-center">
+       
+          <h3 class="text-center">
+           совсем скоро:
+          </h3>
+
+          <div class="img_block">
+            <div class="img_cnt wow fadeInLeft" data-wow-duration='2.5s'>
+              <img src="{% static 'handball/images/01.png' %}" alt="">
+              <div class="overlay">
+                <time datetime="2016">07&nbsp;/&nbsp;&nbsp;09&nbsp;&nbsp;<span>/&nbsp;2016</span></time>
+                <p class="ins3">
+                  Товарищеская встреча с командой "Сумы"<span>  Встреча состоится на территории соперника. </span>
+                </p>
+                <a href="#" class="btn btn-default">узнать больше</a>
+              </div>
+            </div>
+            <div class="img_cnt wow fadeInLeft" data-wow-duration='2s'>
+              <img src="{% static 'handball/images/01.png' %}" alt="">
+              <div class="overlay">
+                <time datetime="2016">01&nbsp;/&nbsp;&nbsp;11&nbsp;&nbsp;<span>/&nbsp;2016</span></time>
+                <p class="ins3">
+                  Товарищеская встреча с командой "Броварчанка"<span>  Встреча состоится на нашей территории. </span>
+                </p>
+                <a href="#" class="btn btn-default">узнать больше</a>
+              </div>
+            </div>
+            <div class="img_cnt wow fadeInLeft" data-wow-duration='1.5s'>
+              <img src="{% static 'handball/images/01.png' %}" alt="">
+              <div class="overlay">
+                <time datetime="2016">28&nbsp;/&nbsp;&nbsp;12&nbsp;&nbsp;<span>/&nbsp;2016</span></time>
+                <p class="ins3">
+                  Кубок Украины. Встреча с командой "Газ-Мясочка"<span>  Встреча состоится на территории соперника. </span>
+                </p>
+                <a href="#" class="btn btn-default">узнать больше</a>
+              </div>
+            </div>
+            <div class="img_cnt wow fadeInLeft" data-wow-duration='1s'>
+              <img src="{% static 'handball/images/01.png' %}" alt="">
+              <div class="overlay">
+                <time datetime="2016">18&nbsp;/&nbsp;&nbsp;01&nbsp;&nbsp;<span>/&nbsp;2017</span></time>
+                <p class="ins3">
+                  Чемпионат мира. Встреча с командой "Real Madrid"<span>  Встреча состоится на территории соперника. </span>
+                </p>
+                <a href="#" class="btn btn-default">узнать больше</a>
+              </div>
+            </div>
+          </div>
+    
+      </section> 
+
+    </main>
+
+<footer class="parallax"  style="background-image:url('/static/handball/images/handball.jpg');" data-mobile="true">
+
+    <section class="well well4">
+      <div class="container">
+
+        <h3 class="text-center">
+         Наши чемпионы:
+        </h3>
+
+        <div class="owl-carousel">
+
+            <div class="item">
+              <div class="row">
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  
+                    <div class="thumbnail">
+                    <a href="#">
+                      <div class="img-thumbnail">
+                        <img src="{% static 'handball/images/ch1.png' %}" alt="">
+                      </div>  
+                      <h5>
+                        Richard Geer
+                      </h5>
+                      <p>
+                        Praesent vestibulum aenean nonummy 
+                        endrerit mauris. Cum sociis natoque 
+                        Magnis dis parturient montes. Ascetur 
+                        ridiculus mus. Nulla du. 
+                      </p>
+                    </a>  
+                    </div>
+                  
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  
+                    <div class="thumbnail">
+                    <a href="#">
+                      <div class="img-thumbnail">
+                        <img src="{% static 'handball/images/ch2.png' %}"  alt="">
+                      </div>  
+                      <h5>
+                        Sara Smith
+                      </h5>
+                      <p>
+                        Praesent vestibulum aenean nonummy 
+                        endrerit mauris. Cum sociis natoque 
+                        Magnis dis parturient montes. Ascetur 
+                        ridiculus mus. Nulla du. 
+                      </p>
+                    </a>  
+                    </div>
+                  
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  
+                    <div class="thumbnail">
+                    <a href="#">
+                      <div class="img-thumbnail">
+                        <img src="{% static 'handball/images/ch3.png' %}"  alt="">
+                      </div>  
+                      <h5>
+                        John Johnson
+                      </h5>
+                      <p>
+                        Praesent vestibulum aenean nonummy 
+                        endrerit mauris. Cum sociis natoque 
+                        Magnis dis parturient montes. Ascetur 
+                        ridiculus mus. Nulla du. 
+                      </p>
+                    </a>  
+                    </div>
+                  
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  
+                    <div class="thumbnail">
+                    <a href="#">
+                      <div class="img-thumbnail">
+                        <img src="{% static 'handball/images/ch4.png' %}"  alt="">
+                      </div>  
+                      <h5>
+                        April Black
+                      </h5>
+                      <p>
+                        Praesent vestibulum aenean nonummy 
+                        endrerit mauris. Cum sociis natoque 
+                        Magnis dis parturient montes. Ascetur 
+                        ridiculus mus. Nulla du. 
+                      </p>
+                    </a>  
+                    </div>
+                  
+                </div>
+
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="row">
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  
+                    <div class="thumbnail">
+                    <a href="#">
+                      <div class="img-thumbnail">
+                        <img src="{% static 'handball/images/ch1.png' %}"  alt="">
+                      </div>  
+                      <h5>
+                        Sara Smith
+                      </h5>
+                      <p>
+                        Praesent vestibulum aenean nonummy 
+                        endrerit mauris. Cum sociis natoque 
+                        Magnis dis parturient montes. Ascetur 
+                        ridiculus mus. Nulla du. 
+                      </p>
+                    </a>  
+                    </div>
+                  
+                </div>
+
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  
+                    <div class="thumbnail">
+                    <a href="#">
+                      <div class="img-thumbnail">
+                        <img src="{% static 'handball/images/ch2.png' %}"  alt="">
+                      </div>  
+                      <h5>
+                        Richard Geer
+                      </h5>
+                      <p>
+                        Praesent vestibulum aenean nonummy 
+                        endrerit mauris. Cum sociis natoque 
+                        Magnis dis parturient montes. Ascetur 
+                        ridiculus mus. Nulla du. 
+                      </p>
+                    </a>  
+                    </div>
+                  
+                </div>
+                
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  
+                    <div class="thumbnail">
+                    <a href="#">
+                      <div class="img-thumbnail">
+                        <img src="{% static 'handball/images/ch3.png' %}" alt="">
+                      </div>  
+                      <h5>
+                        John Johnson
+                      </h5>
+                      <p>
+                        Praesent vestibulum aenean nonummy 
+                        endrerit mauris. Cum sociis natoque 
+                        Magnis dis parturient montes. Ascetur 
+                        ridiculus mus. Nulla du. 
+                      </p>
+                    </a>  
+                    </div>
+                  
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  
+                    <div class="thumbnail">
+                    <a href="#">
+                      <div class="img-thumbnail">
+                        <img src="{% static 'handball/images/ch4.png' %}"  alt="">
+                      </div>  
+                      <h5>
+                        April Black
+                      </h5>
+                      <p>
+                        Praesent vestibulum aenean nonummy 
+                        endrerit mauris. Cum sociis natoque 
+                        Magnis dis parturient montes. Ascetur 
+                        ridiculus mus. Nulla du. 
+                      </p>
+                    </a>  
+                    </div>
+                  
+                </div>
+
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </section>
+
+  
+
+
+{% endblock %}
+
