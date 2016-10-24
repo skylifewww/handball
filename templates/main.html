@@ -19,7 +19,15 @@
 
     <!-- Bootstrap -->
     <link href="{% static 'handball/css/bootstrap.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'handball/css/grid.css' %}">
+  <link rel="stylesheet" href="{% static 'handball/css/style.css' %}">
 
+  <link rel="stylesheet" href="{% static 'handball/css/styleswitcher.css' %}"/>
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:100,400,700,900' rel='stylesheet'>
+  <link href="{% static 'handball/css/font-awesome.css' %}" rel='stylesheet'>
+
+ 
     <!-- Links -->
         <!-- Important Owl stylesheet -->
     {# <link rel="stylesheet" href="{% static 'handball/css/owl-carousel/owl.carousel.css' %}"> #}
@@ -31,9 +39,10 @@
     {# // <script src="{% static 'handball/css/jquery-1.9.1.min.js' %}"></script> #}
      
     <!-- Include js plugin -->
-    {# // <script src="{% static 'handball/css/assets/owl-carousel/owl.carousel.js' %}"></script> #}
-    <link rel="stylesheet" href="{% static 'handball/css/owl-carousel/owl-carousel.css' %}">
+     {# // <script src="{% static 'handball/css/assets/owl-carousel/owl.carousel.js' %}"></script> #}
+    <link rel="stylesheet" href="{% static 'handball/css/owl-carousel.css' %}">
     <link rel="stylesheet" href="{% static 'handball/css/google-map.css' %}">
+    <link rel="stylesheet" href="{% static 'handball/css/rd-mailform.css' %}">
 
 
 
@@ -53,9 +62,113 @@
     <script src="js/html5shiv.js"></script>
     <![endif]-->
     <script src="{% static 'handball/js/device.min.js' %}"></script>
+    <script src="{% static 'handball/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'handball/js/scripts.js' %}"></script>    
+    <script src="{% static 'handball/js/jquery.rd-parallax.js' %}"></script>
+    <script src="{% static 'handball/js/jquery.rd-navbar.js' %}"></script>
+    <script src="{% static 'handball/js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'handball/js/owl.carousel.js' %}"></script>
+    <script src="{% static 'handball/js/jquery.cookie.js' %}"></script>
+    {# // <script src="{% static 'handball/js/tm-scripts.js' %}"></script>     #}
   </head>
   <body>
   <div class="page">
+
+ <!--========================================================
+                            HEADER
+  =========================================================-->
+    <header class="head1">  
+      
+      <div id="stuck_container" class="stuck_container">
+        <nav class="navbar navbar-default navbar-static-top ">
+          <div class="container"> 
+
+            <div class="menu-holder">  
+              <ul class="navbar-nav sf-menu" data-type="navbar">
+
+              {% if page == 1 %}
+                <li class="active">
+                  <a href="/">Home</a>
+                </li>
+                {% else %} 
+                 <li>
+                  <a href="/">Home</a>
+                </li>
+                {% endif %}
+                <li class="dropdown">
+
+                 {% if page == 2 %}
+                <li class="active">
+                  <a href="/about/">О нас</a>
+                </li>
+                {% else %} 
+                 <li>
+                  <a href="/about/">О нас</a>
+                </li>
+                {% endif %}
+                 
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#">История </a>
+                    </li>
+                    <li>
+                      <a href="#">Наше предложение </a>                      
+                    </li>
+                    <li>
+                      <a href="#">Новости</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="#">Свежие</a>
+                          </li>
+                          <li>
+                            <a href="#">Архив</a>
+                          </li>                      
+                        </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                  {% if page == 4 %}
+                <li class="active">
+                  <a href="/gallery/">Галлерея</a>
+                </li>
+                {% else %} 
+                 <li>
+                  <a href="/gallery/">Галлерея</a>
+                </li>
+                {% endif %}
+                
+
+                   {% if page == 3 %}
+                <li class="active">
+                  <a href="/events/">События</a>
+                </li>
+                {% else %} 
+                 <li>
+                  <a href="/events/">События</a>
+                </li>
+                {% endif %}
+
+                
+                  {% if page == 5 %}
+                <li class="active">
+                  <a href="/contact/">Контакты</a>
+                </li>
+                {% else %} 
+                 <li>
+                  <a href="/contact/">Контакты</a>
+                </li>
+                {% endif %}
+                
+              </ul>                           
+            </div>
+
+          </div>
+        </nav>
+      </div>  
+
+     
  
 
   <!--========================================================
@@ -68,6 +181,8 @@
   {% block gallery %}{% endblock %}
   {% block events %}{% endblock %} 
   {% block contact %}{% endblock %}  
+  {% block plays %}{% endblock %}
+  {% block force %}{% endblock %}
 
 
     <!--========================================================
@@ -109,8 +224,16 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->         
     <script src="{% static 'handball/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'handball/js/tm-scripts.js' %}"></script>    
+    <script src="{% static 'handball/js/scripts.js' %}"></script>    
+    <script src="{% static 'handball/js/jquery.rd-parallax.js' %}"></script>
+    <script src="{% static 'handball/js/jquery.rd-navbar.js' %}"></script>
+    <script src="{% static 'handball/js/device.min.js' %}"></script>
+    <script src="{% static 'handball/js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'handball/js/owl.carousel.js' %}"></script>
+    <script src="{% static 'handball/js/jquery.cookie.js' %}"></script>
   <!-- </script> -->
+
+
 
 <script type="text/javascript">
  var _gaq = _gaq || [];
@@ -121,5 +244,5 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();</script>
-  </body><!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N7VWVN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push( {'gtm.start': new Date().getTime(),event:'gtm.js'} );var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-N7VWVN');</script> <!-- End Google Tag Manager -->
+</body><!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager -->
 </html>

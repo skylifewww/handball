@@ -153,8 +153,8 @@
                     $('body').delegate('*', 'mousewheel', nav.scroll);
                     $('body').delegate('*', 'touchmove', nav.scroll);
                     $('body').delegate('*', 'touchend', nav.touchend);
-                    $('body').delegate('*', 'touchstart', {type: type}, nav.close);
-                    $('body').delegate('*:not(.' + settings.toggleClass + ' span)', 'click', {type: type}, nav.close);
+                    $('body').delegate('*', 'touchstart', {type: type, nav: nav}, nav.close);
+                    $('body').delegate('*:not(.' + settings.toggleClass + ' span)', 'click', {type: type, nav: nav}, nav.close);
                 }
             });
         },
@@ -221,6 +221,9 @@
                 return;
             }
 
+            var o = $('.' + settings.cntClass),
+                t = $('.' + settings.toggleClass);
+
             var menu = $('.' + settings.menuClass);
             var x = e.originalEvent.targetTouches ? e.originalEvent.targetTouches[0].pageX : e.pageX,
                 y = e.originalEvent.targetTouches ? e.originalEvent.targetTouches[0].pageY : e.pageY;
@@ -232,7 +235,13 @@
                 x < (menu.offset().left + menu.outerWidth())
                 )
             ) {
-                $('.' + settings.toggleClass).trigger(e.data.type);
+                t.removeClass('active');
+                o.removeClass('active');
+                $('body').undelegate('*', 'mousewheel', e.data.nav.scroll); 
+                $('body').undelegate('*', 'touchmove', e.data.nav.scroll);
+                $('body').undelegate('*', 'touchend', e.data.nav.touchend);
+                $('body').undelegate('*', 'touchstart', e.data.nav.close);
+                $('body').undelegate('*:not(.' + settings.toggleClass + ' span)', 'click', e.data.nav.close);
             }
         },
 

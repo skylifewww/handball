@@ -1,4 +1,17 @@
-# # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from django.http.response import Http404
+from django.shortcuts import render_to_response, redirect
+from content.models import *
+from django.core.exceptions import ObjectDoesNotExist
+# from article.forms import CommentForm
+from django.template.context_processors import csrf
+from django.contrib import auth
+from django.core.paginator import Paginator
+# from django.contrib.auth.models import User
+# from iosDevCourse.users.models import User
+from django.template import loader, Context, RequestContext
+
 # from django.db import models
 # from django.http import HttpResponse
 # from django.template import Context, loader
@@ -11,6 +24,31 @@
 # from django.core.mail import send_mail, EmailMessage
 # from turn.models import EmailTurn, SmsTurn
 # from suds.client import Client
+
+
+
+
+def plays(request):
+    
+    # args = {}
+    # args['username'] = auth.get_user(request).username     
+
+    return render_to_response("plays.html")   
+
+
+
+def force(request):
+
+    # args = {}
+    # args['works'] = Works.objects.all()
+    # args['username'] = auth.get_user(request).username     
+ 
+
+    return render_to_response("force.html")
+
+
+
+
 
 
 

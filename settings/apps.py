@@ -23,5 +23,6 @@ INSTALLED_APPS = (
     'handball.core',
     'handball.users',
     'article',
+    # 'about',
     'content',
 )

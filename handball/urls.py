@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', index),
+    url(r'^raspisanie/', include("content.urls")),
     url(r'^articles/', include("article.urls")),
     url(r'contact/$',contact),
     url(r'about/$',about),

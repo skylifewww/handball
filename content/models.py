@@ -51,22 +51,33 @@ class MenuItem(MPTTModel):
     
 
     
-# class Category(models.Model):
-#     name = models.CharField(max_length=250, verbose_name=u"Название")
-#     # title = models.CharField(max_length=250, blank=True, verbose_name="Заголовок в браузере")
-#     # metakey = models.CharField(max_length=250, blank=True, verbose_name="Ключевые слова")
-#     # metadesc = models.CharField(max_length=250, blank=True, verbose_name="Мета описание")
-#     # slug = models.CharField(max_length=250, blank=True, verbose_name="Урл")
+# class Cat_raspis(models.Model):
+#     name = models.CharField(max_length=250, verbose_name=u"Категория расписания")
 #     # parent = TreeForeignKey('self', null=True, blank=True, related_name='children', verbose_name=u"Родительская категория")
-#     # published = models.BooleanField(verbose_name="Опубликован")
-#     # ordering = models.IntegerField(verbose_name="Порядок сортировки", default=0, blank=True, null=True)
+#     published = models.BooleanField(verbose_name="Опубликован")
+#     ordering = models.IntegerField(verbose_name="Порядок сортировки", default=0, blank=True, null=True)
 
 #     def __unicode__(self):
 #         return self.name
         
 #     class Meta:
-#         verbose_name_plural = "Категории"
-#         verbose_name = "Категория"
+#         verbose_name_plural = "Категории расписания"
+#         verbose_name = "Категория расписания"
+
+
+# class RaspisItem(models.Model):
+#     # raspisanie = models.ForeignKey(Cat_raspis)
+#     name = models.CharField(max_length=250, verbose_name="Название")
+#     text = RichTextField(blank=True, verbose_name="")
+#     published = models.BooleanField(verbose_name="Опубликован")
+#     ordering = models.IntegerField(verbose_name="Порядок сортировки", default=0, blank=True, null=True)
+
+#     def __unicode__(self):
+#         return self.name
+
+#     class Meta:
+#         verbose_name_plural = "Сниппеты"
+#         verbose_name = "Сниппет"          
 
 
     
@@ -116,6 +127,7 @@ class Snipet(models.Model):
     class Meta:
         verbose_name_plural = "Сниппеты"
         verbose_name = "Сниппет"
+      
 
 
 class Top(models.Model):

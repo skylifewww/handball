@@ -73,6 +73,12 @@ def left_vert_menu():
     return {'items': items}
 
 
+@register.inclusion_tag('menu/raspisanie.html')
+def raspisanie():
+    
+    menu = Menu.objects.get(pk=1)
+    items = MenuItem.objects.filter(menu=menu, published=1).order_by('ordering')
+    return {'items': items}
 
 
 

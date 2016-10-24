@@ -3,6 +3,7 @@
 {% load embed_video_tags %}
 {% load i18n mptt_tags %}
 {% load thumbnail %}
+{% load content_tags %}
 
 {% block index %}
 
@@ -10,55 +11,7 @@
  <!--========================================================
                             HEADER
   =========================================================-->
-    <header class="">  
-      
-      <div id="stuck_container" class="stuck_container">
-        <nav class="navbar navbar-default navbar-static-top ">
-          <div class="container"> 
-
-            <div class="">  
-              <ul class="navbar-nav sf-menu" data-type="navbar">
-                <li class="active">
-                  <a href="/">Home</a>
-                </li>
-                <li class="dropdown">
-                  <a href="/about/">О нас</a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a href="#">История </a>
-                    </li>
-                    <li>
-                      <a href="#">Наше предложение </a>                      
-                    </li>
-                    <li>
-                      <a href="#">Новости</a>
-                        <ul class="dropdown-menu">
-                          <li>
-                            <a href="#">Свежие</a>
-                          </li>
-                          <li>
-                            <a href="#">Архив</a>
-                          </li>                      
-                        </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="/gallery/">Галлерея</a>
-                </li>
-                <li>
-                  <a href="/events/">События</a>
-                </li>
-                
-                <li>
-                  <a href="/contact/">Контакты</a>
-                </li>
-              </ul>                           
-            </div>
-
-          </div>
-        </nav>
-      </div>  
+   
 
       <section class="well well1">
         <div class="container">
@@ -90,36 +43,9 @@
                 Расписание основных игр и событий нашей команды. 
               </p>
               <ul class="marked-list">
-                <li>
-                  <a href="#">
-                    Подготовка к осеннему сезону
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Усиленные тренировки 
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Товарищеские встречи
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Тактические учения
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Выступление на региональных играх
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    КУбок Украины
-                  </a>
-                </li>
+
+              {% raspisanie %}
+              
               </ul>  
             </div>
 
@@ -137,7 +63,7 @@
                 для Наш Клуб был создан для Наш Клуб был создан для Наш Клуб был 
                 создан для Наш Клуб был создан для . 
               </p>
-              <a href="#" class="btn">узнать больше</a>
+              <a href="/about/" class="btn">узнать больше</a>
             </div>
 
             <div class="col-md-4 col-sm-12 col-xs-12">

@@ -10,42 +10,38 @@ from handball.forms import *
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from django.template import Context
-from article.views import return_path_f
 
 
 def index(request):
 
-    return_path_f(request)
 
-    return render_to_response("index.html")
+    return render_to_response("index.html", {'page': 1})
 
 
 def about(request):
 
-    return_path_f(request)
+    
 
-    return render_to_response("about.html")    
+    return render_to_response("about.html", {'page': 2})    
 
 
 def events(request):
 
-    return_path_f(request)
 
-    return render_to_response("events.html")        
+    return render_to_response("events.html", {'page': 3})        
  
  
 def gallery(request):
 
-    return_path_f(request)
+  
 
-    return render_to_response("gallery.html")  
+    return render_to_response("gallery.html", {'page': 4})  
 
 
 def contact(request):
 
     form_class = ContactForm
 
-    return_path_f(request)
 
     if request.method == 'POST':
         form = form_class(data=request.POST)
@@ -80,5 +76,5 @@ def contact(request):
             return redirect(request.META.get('HTTP_REFERER', '/'))
 
     return render(request, 'contact.html', {
-        'form': form_class,
+        'form': form_class, 'page': 5
     })
