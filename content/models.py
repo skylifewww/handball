@@ -21,6 +21,97 @@ def make_upload_path(instance, filename, prefix = False):
     return u"%s/%s" % (settings.IMAGE_UPLOAD_DIR, filename)
 
 
+class Cat_play(models.Model):
+    name = models.CharField(max_length=250, verbose_name=u"Тип игры", blank=True, default="", unique=True)
+    
+    class Meta:
+        db_table = "cat_play"
+        verbose_name = "Тип игры"
+        verbose_name_plural = "Тип игр"
+
+    def __str__(self):
+        return self.name
+
+
+class Arena(models.Model):
+    name = models.CharField(max_length=250, verbose_name=u"Название стадиона", blank=True, default="")
+    city = models.CharField(max_length=250, verbose_name=u"Город", blank=True, default="")
+    country = models.CharField(max_length=250, verbose_name=u"Страна", blank=True, default="")
+    slug = models.CharField(max_length=250, blank=True, verbose_name=u'Картинка стадиона')
+    
+    class Meta:
+        db_table = "arena"
+        verbose_name = "стадион"
+        verbose_name_plural = "стадионы"
+
+    def __str__(self):
+        return self.name
+
+    def pic_slug(self):
+        if self.slug:
+            return u'<img src="%s" width="70"/>' % self.slug
+        else:
+            return '(none)'
+    pic_slug.short_description = u'Картинка стадиона'
+    pic_slug.allow_tags = True                
+
+
+class Team(models.Model):
+    name = models.CharField(max_length=250, verbose_name=u"Название команды", blank=True, default="")
+    city = models.CharField(max_length=250, verbose_name=u"Город", blank=True, default="")
+    country = models.CharField(max_length=250, verbose_name=u"Страна", blank=True, default="")
+    gender = models.CharField(max_length=250, verbose_name=u"Пол игроков", blank=True, default="")
+    slug = models.CharField(max_length=250, blank=True, verbose_name=u'Герб команды')
+    
+    class Meta:
+        db_table = "teams"
+        verbose_name = "Команда"
+        verbose_name_plural = "Команды"
+
+    def __str__(self):
+        return self.name
+
+    def pic_slug(self):
+        if self.slug:
+            return u'<img src="%s" width="70"/>' % self.slug
+        else:
+            return '(none)'
+    pic_slug.short_description = u'Герб команды'
+    pic_slug.allow_tags = True        
+
+
+class Play(models.Model):
+    name = models.CharField(max_length=250, verbose_name=u"Название игры", blank=True, default="")
+    cat_play = models.ForeignKey(Cat_play, null=True, blank=True, verbose_name=u"Тип игры")
+    enemy_team = models.ManyToManyField(Team, blank=True, related_name='enemy', verbose_name=u"Команда противник")
+    place_game = models.ManyToManyField(Arena, blank=True, related_name='arena', verbose_name=u"Место встречи")
+    is_home = models.BooleanField(verbose_name=u"Играем дома?")
+    date = models.DateTimeField(verbose_name=u"Дата игры")
+    slug = models.CharField(max_length=250, blank=True, verbose_name=u'Картинка игры')
+    
+    class Meta:
+        db_table = "plays"
+        verbose_name = "Игра"
+        verbose_name_plural = "Игры"
+        ordering = ['date']
+
+    def __str__(self):
+        return self.name
+
+    def pic_slug(self):
+        if self.slug:
+            return u'<img src="%s" width="70"/>' % self.slug
+        else:
+            return '(none)'
+    pic_slug.short_description = u'Картинка игры'
+    pic_slug.allow_tags = True 
+
+    def home_or_guest(self):
+        if self.is_home: 
+            return u'Играем дома.'
+        else:
+            return u'Играем в гостях.'    
+
 
 class Menu(models.Model):
     name = models.CharField(max_length=200, verbose_name=u"Название")
@@ -32,7 +123,7 @@ class Menu(models.Model):
 
     
 class MenuItem(MPTTModel):
-    menu = models.ForeignKey(Menu,null=True, blank=True, verbose_name=u"Меню")
+    menu = models.ForeignKey(Menu, null=True, blank=True, verbose_name=u"Меню")
     name = models.CharField(max_length=200, verbose_name="Название")
     slug = models.CharField(max_length=250, blank=True, verbose_name="Урл")
     full_text = RichTextField(blank=True, verbose_name="Полное описание")
@@ -49,36 +140,6 @@ class MenuItem(MPTTModel):
     class MPTTMeta:
         order_insertion_by = ['name']
     
-
-    
-# class Cat_raspis(models.Model):
-#     name = models.CharField(max_length=250, verbose_name=u"Категория расписания")
-#     # parent = TreeForeignKey('self', null=True, blank=True, related_name='children', verbose_name=u"Родительская категория")
-#     published = models.BooleanField(verbose_name="Опубликован")
-#     ordering = models.IntegerField(verbose_name="Порядок сортировки", default=0, blank=True, null=True)
-
-#     def __unicode__(self):
-#         return self.name
-        
-#     class Meta:
-#         verbose_name_plural = "Категории расписания"
-#         verbose_name = "Категория расписания"
-
-
-# class RaspisItem(models.Model):
-#     # raspisanie = models.ForeignKey(Cat_raspis)
-#     name = models.CharField(max_length=250, verbose_name="Название")
-#     text = RichTextField(blank=True, verbose_name="")
-#     published = models.BooleanField(verbose_name="Опубликован")
-#     ordering = models.IntegerField(verbose_name="Порядок сортировки", default=0, blank=True, null=True)
-
-#     def __unicode__(self):
-#         return self.name
-
-#     class Meta:
-#         verbose_name_plural = "Сниппеты"
-#         verbose_name = "Сниппет"          
-
 
     
 class Meta(models.Model):

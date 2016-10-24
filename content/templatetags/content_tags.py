@@ -6,7 +6,7 @@ from django import template
 # from django.template.defaulttags import NowNode
 # from django.utils.safestring import mark_safe
 from django.shortcuts import render_to_response, redirect, get_object_or_404
-from content.models import Top, Menu, MenuItem, Meta
+from content.models import *
 
 
 register = template.Library()
@@ -64,13 +64,12 @@ def top_text_big():
     return {'text_big': top.text_big}
 
 
-@register.inclusion_tag('menu/left_vert_menu.html')
-def left_vert_menu():
+@register.inclusion_tag('plays/plays.html')
+def plays():
     
-    # menu = Menu.objects.get(pk=5)
-    menu = Menu.objects.get(pk=1)
-    items = MenuItem.objects.filter(menu=menu, published=1).order_by('ordering')
-    return {'items': items}
+    # plays = get_object_or_404(Play).order_by('ordering')objects.all()[:4]
+    plays = Play.objects.all()[:4]
+    return {'plays': plays}
 
 
 @register.inclusion_tag('menu/raspisanie.html')

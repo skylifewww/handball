@@ -102,6 +102,7 @@
         </div>
       </section>  
 
+
       <section class="well well3 well3_ins1 text-center">
        
           <h3 class="text-center">
@@ -109,51 +110,14 @@
           </h3>
 
           <div class="img_block">
-            <div class="img_cnt wow fadeInLeft" data-wow-duration='2.5s'>
-              <img src="{% static 'handball/images/01.png' %}" alt="">
-              <div class="overlay">
-                <time datetime="2016">07&nbsp;/&nbsp;&nbsp;09&nbsp;&nbsp;<span>/&nbsp;2016</span></time>
-                <p class="ins3">
-                  Товарищеская встреча с командой "Сумы"<span>  Встреча состоится на территории соперника. </span>
-                </p>
-                <a href="#" class="btn btn-default">узнать больше</a>
-              </div>
-            </div>
-            <div class="img_cnt wow fadeInLeft" data-wow-duration='2s'>
-              <img src="{% static 'handball/images/01.png' %}" alt="">
-              <div class="overlay">
-                <time datetime="2016">01&nbsp;/&nbsp;&nbsp;11&nbsp;&nbsp;<span>/&nbsp;2016</span></time>
-                <p class="ins3">
-                  Товарищеская встреча с командой "Броварчанка"<span>  Встреча состоится на нашей территории. </span>
-                </p>
-                <a href="#" class="btn btn-default">узнать больше</a>
-              </div>
-            </div>
-            <div class="img_cnt wow fadeInLeft" data-wow-duration='1.5s'>
-              <img src="{% static 'handball/images/01.png' %}" alt="">
-              <div class="overlay">
-                <time datetime="2016">28&nbsp;/&nbsp;&nbsp;12&nbsp;&nbsp;<span>/&nbsp;2016</span></time>
-                <p class="ins3">
-                  Кубок Украины. Встреча с командой "Газ-Мясочка"<span>  Встреча состоится на территории соперника. </span>
-                </p>
-                <a href="#" class="btn btn-default">узнать больше</a>
-              </div>
-            </div>
-            <div class="img_cnt wow fadeInLeft" data-wow-duration='1s'>
-              <img src="{% static 'handball/images/01.png' %}" alt="">
-              <div class="overlay">
-                <time datetime="2016">18&nbsp;/&nbsp;&nbsp;01&nbsp;&nbsp;<span>/&nbsp;2017</span></time>
-                <p class="ins3">
-                  Чемпионат мира. Встреча с командой "Real Madrid"<span>  Встреча состоится на территории соперника. </span>
-                </p>
-                <a href="#" class="btn btn-default">узнать больше</a>
-              </div>
-            </div>
+            {% plays %}
+            
           </div>
     
       </section> 
 
     </main>
+    
 
 <footer class="parallax"  style="background-image:url('/static/handball/images/handball.jpg');" data-mobile="true">
 

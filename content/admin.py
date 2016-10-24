@@ -5,11 +5,39 @@ from django.db import models
 
 
 
+
+class Cat_playAdmin(admin.ModelAdmin):
+    list_display = ['name']
+    list_editable = ['name']
+
+
+class ArenaAdmin(admin.ModelAdmin):
+    list_display = ['name', 'pic_slug', 'city', 'country']
+    list_editable = ['name', 'city', 'country']
+    formfield_overrides = {
+        models.ImageField: {'widget': AdminImageWidget},
+    }  
+
+
+class TeamAdmin(admin.ModelAdmin):
+    list_display = ['name', 'pic_slug', 'city', 'country', 'gender']
+    list_editable = ['name', 'city', 'country', 'gender']
+    formfield_overrides = {
+        models.ImageField: {'widget': AdminImageWidget},
+    }    
+
+class PlayAdmin(admin.ModelAdmin):
+    list_display = ['name', 'cat_play', 'is_home', 'date', 'pic_slug']
+    
+    formfield_overrides = {
+        models.ImageField: {'widget': AdminImageWidget},
+    }    
+
+
 class MenuAdmin(admin.ModelAdmin):
     
     list_display = ['name']
     list_editable = ['name']
-
 
 
 class MenuItemAdmin(admin.ModelAdmin):
@@ -43,7 +71,10 @@ class TopAdmin(admin.ModelAdmin):
 #         models.ImageField: {'widget': AdminImageWidget},
 #     }
 
-   
+admin.site.register(Cat_play, Cat_playAdmin) 
+admin.site.register(Arena, ArenaAdmin) 
+admin.site.register(Team, TeamAdmin) 
+admin.site.register(Play, PlayAdmin)   
 admin.site.register(MenuItem, MenuItemAdmin)
 admin.site.register(Menu, MenuAdmin)
 admin.site.register(Meta, MetaAdmin)
