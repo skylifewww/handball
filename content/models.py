@@ -124,7 +124,7 @@ class Menu(models.Model):
     
 class MenuItem(MPTTModel):
     menu = models.ForeignKey(Menu, null=True, blank=True, verbose_name=u"Меню")
-    name = models.CharField(max_length=200, verbose_name="Название")
+    name = models.CharField(max_length=200, verbose_name=u"Название")
     slug = models.CharField(max_length=250, blank=True, verbose_name="Урл")
     full_text = RichTextField(blank=True, verbose_name="Полное описание")
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children', verbose_name=u"Родительский пункт меню")
