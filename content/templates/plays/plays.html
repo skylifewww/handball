@@ -7,8 +7,7 @@
 <div class="img_cnt wow fadeInLeft" data-wow-duration='2.5s'>
               <img src="{{ play.slug }}" alt="">
               <div class="overlay">
-                <time datetime="2016">07&nbsp;/&nbsp;&nbsp;09&nbsp;&nbsp;<span>/&nbsp;2016</span></time>
-                <time datetime="2016">{{ play.date }}</time>
+                <time datetime="2016">{{ play.date.day }}&nbsp;/&nbsp;&nbsp;{{ play.date.month }}&nbsp;&nbsp;<span>/&nbsp;{{ play.date.year }}</span></time>
                 <p class="ins3">
                   {{ play.cat_play}} с командой {{ play.enemy_team.name }}<span>  {{ play.home_or_guest }} </span><span> {{ play.place_game.name }}</span>
                 </p>
