@@ -72,12 +72,12 @@ def plays():
     return {'plays': plays}
 
 
-# @register.inclusion_tag('menu/raspisanie.html')
-# def raspisanie():
+@register.inclusion_tag('menu/raspisanie.html')
+def raspisanie():
     
-#     menu = Menu.objects.get(pk=1)
-#     items = MenuItem.objects.filter(menu=menu, published=1).order_by('ordering')
-#     return {'items': items}
+    menu = Menu.objects.get(pk=1)
+    items = MenuItem.objects.filter(menu=menu, published=1).order_by('ordering')
+    return {'items': items}
 
 
 
