@@ -1950,7 +1950,7 @@ header.head1 .line1:after {
 }
 header.head1:after {
   height: 418px;
-  box-shadow: inset -1px -89px 73px -13px #0186;
+  box-shadow: inset -1px -89px 73px -13px #000;
 }
 header.head2 {
   padding-bottom: 5px;
@@ -1964,7 +1964,7 @@ header.head2 .line1:after {
 =========================================================*/
 main {
   display: block;
-  background: #0086;
+  background: #000;
 }
 
 /*==================      Well     ======================*/
