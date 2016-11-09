@@ -12,17 +12,7 @@
     
     
 
-      <section class="well well1">
-        <div class="container">
-          <div class="navbar-header line1">
-            <h1 class="navbar-brand">
-              <a  href="/">гандбол<br />
-                <small class="small-lines">мы ждем вас!</small>
-              </a>
-            </h1>
-          </div>
-        </div>
-      </section>
+      
     </header>
 
     <main>        
@@ -30,203 +20,32 @@
       <section class="well well6">
         <div class="container">
           <h3 class="text-center h3">
-            our gallery
+            Наши Фото
           </h3>
           <div class="row col-4_mod">
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
-              <div class="thumbnail-2">
-                <a class="thumb" data-fancybox-group="1" href="images/page-3_img1_original.jpg">
-                  <img src="images/page-3_img1.jpg" alt="">
-                  <span class="thumb_overlay"></span>
-                </a>  
-                <div class="caption">
-                  <p class="text-info">
-                    Eugiatmale suada odio. Morbi nunc odio gravida<br />
-                    <span>Quisque id elementum lorem. Morbi sit amet justo metus. Proin sodales imperdiet fringilla nam vel.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+          {% for photo in photos %}
 
             <div class="col-md-4 col-sm-6 col-xs-12">
               <div class="thumbnail-2">
-                <a class="thumb" data-fancybox-group="1" href="images/page-3_img2_original.jpg">
-                  <img src="images/page-3_img2.jpg" alt="">
+                <a class="thumb" data-fancybox-group="1" href="{{ photo.slug }}">
+                  <img src="{{ photo.slug }}" alt="">
                   <span class="thumb_overlay"></span>
                 </a>  
                 <div class="caption">
                   <p class="text-info">
-                    Eugiatmale suada odio. Morbi nunc odio gravida<br />
-                    <span>Quisque id elementum lorem. Morbi sit amet justo metus. Proin sodales imperdiet fringilla nam vel.</span>
+                    {{ photo.name }}<span>{{ photo.short_text|safe }}</span>
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
-              <div class="thumbnail-2">
-                <a class="thumb" data-fancybox-group="1" href="images/page-3_img3_original.jpg">
-                  <img src="images/page-3_img3.jpg" alt="">
-                  <span class="thumb_overlay"></span>
-                </a>  
-                <div class="caption">
-                  <p class="text-info">
-                    Eugiatmale suada odio. Morbi nunc odio gravida<br />
-                    <span>Quisque id elementum lorem. Morbi sit amet justo metus. Proin sodales imperdiet fringilla nam vel.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
 
-            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration='1s'>
-              <div class="thumbnail-2">
-                <a class="thumb" data-fancybox-group="1" href="images/page-3_img4_original.jpg">
-                  <img src="images/page-3_img4.jpg" alt="">
-                  <span class="thumb_overlay"></span>
-                </a>  
-                <div class="caption">
-                  <p class="text-info">
-                    Eugiatmale suada odio. Morbi nunc odio gravida<br />
-                    <span>Quisque id elementum lorem. Morbi sit amet justo metus. Proin sodales imperdiet fringilla nam vel.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration='1s'>
-              <div class="thumbnail-2">
-                <a class="thumb" data-fancybox-group="1" href="images/page-3_img5_original.jpg">
-                  <img src="images/page-3_img5.jpg" alt="">
-                  <span class="thumb_overlay"></span>
-                </a>  
-                <div class="caption">
-                  <p class="text-info">
-                    Eugiatmale suada odio. Morbi nunc odio gravida<br />
-                    <span>Quisque id elementum lorem. Morbi sit amet justo metus. Proin sodales imperdiet fringilla nam vel.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration='1s'>
-              <div class="thumbnail-2">
-                <a class="thumb" data-fancybox-group="1" href="images/page-3_img6_original.jpg">
-                  <img src="images/page-3_img6.jpg" alt="">
-                  <span class="thumb_overlay"></span>
-                </a>  
-                <div class="caption">
-                  <p class="text-info">
-                    Eugiatmale suada odio. Morbi nunc odio gravida<br />
-                    <span>Quisque id elementum lorem. Morbi sit amet justo metus. Proin sodales imperdiet fringilla nam vel.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration='1s'>
-              <div class="thumbnail-2">
-                <a class="thumb" data-fancybox-group="1" href="images/page-3_img7_original.jpg">
-                  <img src="images/page-3_img7.jpg" alt="">
-                  <span class="thumb_overlay"></span>
-                </a>  
-                <div class="caption">
-                  <p class="text-info">
-                    Eugiatmale suada odio. Morbi nunc odio gravida<br />
-                    <span>Quisque id elementum lorem. Morbi sit amet justo metus. Proin sodales imperdiet fringilla nam vel.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration='1s'>
-              <div class="thumbnail-2">
-                <a class="thumb" data-fancybox-group="1" href="images/page-3_img8_original.jpg">
-                  <img src="images/page-3_img8.jpg" alt="">
-                  <span class="thumb_overlay"></span>
-                </a>  
-                <div class="caption">
-                  <p class="text-info">
-                    Eugiatmale suada odio. Morbi nunc odio gravida<br />
-                    <span>Quisque id elementum lorem. Morbi sit amet justo metus. Proin sodales imperdiet fringilla nam vel.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration='1s'>
-              <div class="thumbnail-2">
-                <a class="thumb" data-fancybox-group="1" href="images/page-3_img9_original.jpg">
-                  <img src="images/page-3_img9.jpg" alt="">
-                  <span class="thumb_overlay"></span>
-                </a>  
-                <div class="caption">
-                  <p class="text-info">
-                    Eugiatmale suada odio. Morbi nunc odio gravida<br />
-                    <span>Quisque id elementum lorem. Morbi sit amet justo metus. Proin sodales imperdiet fringilla nam vel.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
 
           </div>
         </div>        
       </section>
-
-      
-      <section class="well well9 text-center">
-        <div class="container">
-          <h2 class="h2_bord h2_bord1">
-            Providing<br />
-            <span>water polo championships</span>        
-          </h2>
-
-          <p class="text-primary ins2 offs1">
-            Praesent vestibulum aenean nonummy endrerit mauris. Cum sociis natoque Magnis dis parturient montes. Ascetur ridiculus mus. Nulla du. 
-            Fusce feugiatmale suada odio. Morbi nunc odio gravidaat cursus nec luctus a lorem. Maecenas tristique orci ac sem uis ultricies pharetra 
-            magna onec accumsan malesuada orci. Donec sit amet eros.
-          </p>
-          <a href="#" class="btn btn-primary">read more</a>
-        </div>
-      </section> 
-
-      <section class="well well8 parallax wow fadeIn" data-wow-duration='3s' data-url="images/parallax3.jpg" data-mobile="true">
-        <div class="container">
-          <h3 class="text-center">
-            last added photos
-          </h3>
-          <div class="row offs1 center767">
-
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <img src="images/page-3_img10.jpg" alt="">
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <p class="mwidth">
-                Praesent vestibulum aenean nonummy Magnis dis parturient montes. Ascetur ridiculus mus. Nulla du. 
-                <span class="span_blc">
-                Duis viverra ac nisi vitae rhoncus. PellenNunc id justo ac nisl luctus ullamcorper in vulputate posuere gravida. Nulla enim tempor eleifend iaculis in nisi. 
-                </span>
-              </p>
-              <a href="#" class="btn btn-primary btn-left">read more</a>
-            </div>
-
-            <div class="col-md-3 col-sm-6 col-xs-12 clear-flt">
-              <img src="images/page-3_img11.jpg" alt="">
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <p class="mwidth">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend sed quis accumsan dolor.  
-                <span class="span_blc">
-                Vestibulum porta quis arcu eu rhoncus. convallis erat, non mattis leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
-                </span>
-              </p>
-              <a href="#" class="btn btn-primary btn-left">read more</a>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
 
     </main>
 

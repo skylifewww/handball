@@ -110,11 +110,11 @@ def plays():
     return {'all_plays': all_plays}
 
 
-@register.inclusion_tag('players/players.html')
-def players():
+# @register.inclusion_tag('players/players.html')
+# def players():
     
-    players = Players.objects.filter(published=1).order_by('ordering')
-    return {'players': players}
+#     players = Players.objects.filter(published=1).order_by('ordering')
+#     return {'players': players}
 
 
 @register.inclusion_tag('menu/raspisanie.html')

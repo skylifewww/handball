@@ -66,7 +66,12 @@ class TopAdmin(admin.ModelAdmin):
         models.ImageField: {'widget': AdminImageWidget},
     }
 
-
+class PhotosAdmin(admin.ModelAdmin):
+    list_display = ['name', 'published', 'pic_slug']
+    
+    formfield_overrides = {
+        models.ImageField: {'widget': AdminImageWidget},
+    }   
 
 # class  CategoryAdmin(admin.ModelAdmin):
 #       list_display = ['name']        
@@ -80,6 +85,7 @@ class TopAdmin(admin.ModelAdmin):
 #     }
 
 admin.site.register(Cat_play, Cat_playAdmin) 
+admin.site.register(Photos, PhotosAdmin) 
 admin.site.register(Arena, ArenaAdmin) 
 admin.site.register(Team, TeamAdmin) 
 admin.site.register(Play, PlayAdmin)   

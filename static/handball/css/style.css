@@ -129,11 +129,11 @@ h2 small, .h2 small {
 }
 
 h3, .h3 {
-  font-size: 48px;
+  font-size: 38px;
   line-height: 1.4375;
   letter-spacing: 9.6px;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 300;
 }
 @media (max-width: 1199px) {
   h3, .h3 {
@@ -566,7 +566,7 @@ h4 + .text-info {
 }
 
 .text-info + * {
-  margin-top: 31px;
+  margin-top: 1px;
 }
 
 time + .text-info {
@@ -1119,8 +1119,8 @@ article + article {
   margin-right: auto;
 }
 .thumbnail-2 .caption {
-  padding: 24px 10px 35px 19px;
-  border: 7px solid #fff;
+  padding: 10px 7px 15px 12px;
+  border: 3px solid #fff;
   border-top: 1px solid transparent;
   background: #000;
 }
@@ -1511,7 +1511,7 @@ article + article {
   }
 }
 /*==================   RD Mobile Menu    =====================*/
-/*.rd-mobilemenu {
+.rd-mobilemenu {
   display: none;
   position: fixed;
   top: 0;
@@ -1746,7 +1746,7 @@ article + article {
   .rd-mobilepanel_title {
     font-size: 18px;
   }
-}*/
+}
 /*==================  Stuck menu  ======================*/
 .stuck_container {
   position: relative;
@@ -1896,7 +1896,7 @@ article + article {
                      HEADER  Section
 =========================================================*/
 header {
-  background: #000 url(../images/hummel.jpg) no-repeat;
+  background: #01565e url(../images/handball_10.png) no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   text-align: center;
@@ -1928,7 +1928,7 @@ header.head1 {
   background-position: 0px -100px;
 }
 header.head1 .well1 {
-  padding-top: 63px;
+  padding-top: 133px;
 }
 header.head1:before {
   position: absolute;
@@ -1950,7 +1950,7 @@ header.head1 .line1:after {
 }
 header.head1:after {
   height: 418px;
-  box-shadow: inset -1px -89px 73px -13px #000;
+  box-shadow: inset -1px -89px 73px -13px #0186;
 }
 header.head2 {
   padding-bottom: 5px;
@@ -1964,7 +1964,7 @@ header.head2 .line1:after {
 =========================================================*/
 main {
   display: block;
-  background: #000;
+  background: #0086;
 }
 
 /*==================      Well     ======================*/

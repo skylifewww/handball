@@ -16,7 +16,7 @@
         <div class="container">
           <div class="navbar-header line1">
             <h1 class="navbar-brand">
-               <a  href="/">гандбол<br />
+               <a  href="/">гк 'shostka'<br />
                 <small class="small-lines">мы ждем вас!</small>
               </a>
             </h1>
@@ -74,7 +74,7 @@
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
               <h3 class="text-center">
-                Benefits
+                Достижения
               </h3>
               <p class="text-info offs1">
                 Praesent vestibulum aenean nonummy endrerit 
@@ -155,81 +155,29 @@
       <section class="well well7 parallax" data-url="images/parallax2.jpg" data-mobile="true" data-direction="inverse">
         <div class="container">
         <h3 class="h3 text-center">
-          Our coaches
+          Наши тренера
         </h3>
           <div class="row">
+
+          {% for player in  players %}
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="thumbnail thumbnail-1">
-                <img class="" src="images/page-2_img3.jpg" alt="">
+                <img class="" src="{{ player.slug }}" alt="">
                 <div class="caption">
                   <h5>
                     <a href="#">
-                      Thomas Bishop
+                      {{ player.name }}
                     </a>
                   </h5>
                   <p>
-                    Praesent vestibulum aenean nonummy 
-                    endrerit mauris. Cum sociis natoque 
-                    Magnis dis parturient montes. Ascetur 
-                    ridiculus mus. Nulla du. 
+                    {{ player.short_text|safe }} 
                   </p>
                 </div>  
              </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="thumbnail thumbnail-1">
-                <img class="" src="images/page-2_img4.jpg" alt="">
-                <div class="caption">
-                  <h5>
-                    <a href="#">
-                      Eva Adamson
-                    </a>
-                  </h5>
-                  <p>
-                    Praesent vestibulum aenean nonummy 
-                    endrerit mauris. Cum sociis natoque 
-                    Magnis dis parturient montes. Ascetur 
-                    ridiculus mus. Nulla du. 
-                  </p>
-                </div>  
-             </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="thumbnail thumbnail-1">
-                <img class="" src="images/page-2_img5.jpg" alt="">
-                <div class="caption">
-                  <h5>
-                    <a href="#">
-                    Sam Kromstain
-                    </a>
-                  </h5>
-                  <p>
-                    Praesent vestibulum aenean nonummy 
-                    endrerit mauris. Cum sociis natoque 
-                    Magnis dis parturient montes. Ascetur 
-                    ridiculus mus. Nulla du. 
-                  </p>
-                </div>  
-             </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="thumbnail thumbnail-1">
-                <img class="" src="images/page-2_img6.jpg" alt="">
-                <div class="caption">
-                  <h5>
-                    <a href="#">
-                    Olivia Grosh
-                    </a>
-                  </h5>
-                  <p>
-                    Praesent vestibulum aenean nonummy 
-                    endrerit mauris. Cum sociis natoque 
-                    Magnis dis parturient montes. Ascetur 
-                    ridiculus mus. Nulla du. 
-                  </p>
-                </div>  
-             </div>
-            </div>
+
+            {% endfor %} 
+           
           </div>
         </div>
       </section>    
@@ -239,7 +187,7 @@
           <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12">
               <h3 class="text-center">
-                awards
+                награды
               </h3>
               <ul class="index-list">
                 <li class="">
@@ -285,7 +233,7 @@
 
             <div class="col-md-4 col-sm-6 col-xs-12">
               <h3 class="text-center">
-                Why us?
+                Почему мы?
               </h3>
                 <p class="text-info offs1">
                 Curabitur sed arcu eu sem varius congue non at ligula. Nam sollicitudin eros sit amet ultricies tempus. Vivamus faucibus sollicitudin quam sit amet efficitur. Integer luctus aliquam dui sit amet hendrerit. 
@@ -355,7 +303,7 @@
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12">
               <h3 class="text-center">
-               they say
+               о нас говорят
               </h3>
               <blockquote>                
                 <div>              

@@ -226,7 +226,7 @@ class Top(models.Model):
     published = models.BooleanField(verbose_name="Опубликован")
     
      
-    def __str__(self):
+    def __unicode__(self):
         return self.text_small
 
     class Meta:
@@ -248,6 +248,35 @@ class Top(models.Model):
             return '(none)'
     pic_slug.short_description = u'Картинка шапки'
     pic_slug.allow_tags = True   
+
+
+class Photos(models.Model):
+    name = models.CharField(max_length=250, verbose_name=u"Название фото", blank=True, default="")
+    short_text = RichTextUploadingField(blank=True, verbose_name="Короткое описание фото")
+    full_text = RichTextUploadingField(blank=True, verbose_name="Полное описание фото")
+    published = models.BooleanField(verbose_name=u"Опубликован")
+    slug = models.CharField(max_length=250, blank=True, verbose_name=u'Фото')
+    date = models.DateTimeField(verbose_name=u"Дата")
+    
+    
+    class Meta:
+        db_table = "photos"
+        verbose_name = "Фото"
+        verbose_name_plural = "Фото"
+        ordering = ['-date']
+
+    def __unicode__(self):
+        return self.name
+
+    def pic_slug(self):
+        if self.slug:
+            return u'<img src="%s" width="70"/>' % self.slug
+        else:
+            return '(none)'
+    pic_slug.short_description = u'Картинка'
+    pic_slug.allow_tags = True 
+  
+
 
   
               

@@ -10,13 +10,13 @@ from handball.forms import *
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from django.template import Context
-from content.models import Players
+from content.models import Players, Photos
 
 
 
 def index(request):
 
-    players = Players.objects.all()
+    players = Players.objects.filter(published=1)
     players_all = []
     length = int(len(players)/4)
     for i in range(length):
@@ -32,9 +32,9 @@ def index(request):
 
 def about(request):
 
-    
+    players = Players.objects.filter(published=1)[:4]
 
-    return render_to_response("about.html", {'page': 2})    
+    return render_to_response("about.html", {'page': 2, 'players': players})    
 
 
 def events(request):
@@ -45,9 +45,10 @@ def events(request):
  
 def gallery(request):
 
-  
+    photos = Photos.objects.filter(published=1)
+    latest_photos = Photos.objects.filter(published=1)[:2]
 
-    return render_to_response("gallery.html", {'page': 4})  
+    return render_to_response("gallery.html", {'page': 4, 'photos': photos, 'latest_photos': latest_photos})  
 
 
 def contact(request):
