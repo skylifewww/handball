@@ -33,6 +33,14 @@ class PlayAdmin(admin.ModelAdmin):
         models.ImageField: {'widget': AdminImageWidget},
     }    
 
+class PlayersAdmin(admin.ModelAdmin):
+    list_display = ['name', 'team', 'published', 'ordering', 'pic_slug']
+    list_editable = ['name', 'published', 'ordering']
+    
+    formfield_overrides = {
+        models.ImageField: {'widget': AdminImageWidget},
+    }       
+
 
 class MenuAdmin(admin.ModelAdmin):
     
@@ -78,7 +86,7 @@ admin.site.register(Play, PlayAdmin)
 admin.site.register(MenuItem, MenuItemAdmin)
 admin.site.register(Menu, MenuAdmin)
 admin.site.register(Meta, MetaAdmin)
-# admin.site.register(Slide, SlideAdmin) 
+admin.site.register(Players, PlayersAdmin) 
 # admin.site.register(Category, CategoryAdmin)
 
 admin.site.register(Snipet)

@@ -7,6 +7,10 @@ from django import template
 # from django.utils.safestring import mark_safe
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from content.models import *
+from django.db.models.constants import LOOKUP_SEP
+from django.db.models import sql
+from django.db import connection
+import json
 
 
 register = template.Library()
@@ -64,12 +68,53 @@ def top_text_big():
     return {'text_big': top.text_big}
 
 
+def load_related_m2m(object_list, field):                                      
+
+    select_fields = ['pk']
+    related_field = object_list.model._meta.get_field(field)
+    related_model = related_field.rel.to
+    cache_name = 'all_%s' % field                                              
+
+    for f in related_model._meta.local_fields:
+        select_fields.append('%s%s%s' % (field, LOOKUP_SEP, f.column))         
+
+    query = sql.Query(object_list.model)
+    query.add_fields(select_fields)
+    query.add_filter(('pk__in', [obj.pk for obj in object_list]))
+
+    related_dict = {}
+    cursor = connection.cursor()
+    cursor.execute(str(query))
+
+    for row in cursor.fetchall():
+        if row[2]:
+            related_dict.setdefault(row[0], []).append(related_model(*row[1:]))
+
+    for obj in object_list:
+        try:
+            setattr(obj, cache_name, related_dict[obj.pk])
+        except KeyError:
+            setattr(obj, cache_name, [])
+
+    return object_list
+
+
 @register.inclusion_tag('plays/plays.html')
 def plays():
     
-    # plays = get_object_or_404(Play).order_by('ordering')objects.all()[:4]
-    plays = Play.objects.all()[:4]
-    return {'plays': plays}
+    all_plays = Play.objects.all()[:4]
+    
+    load_related_m2m(all_plays, 'enemy_team')
+    load_related_m2m(all_plays, 'place_game')
+    
+    return {'all_plays': all_plays}
+
+
+@register.inclusion_tag('players/players.html')
+def players():
+    
+    players = Players.objects.filter(published=1).order_by('ordering')
+    return {'players': players}
 
 
 @register.inclusion_tag('menu/raspisanie.html')

@@ -1,6 +1,4 @@
-
-
-{% for play in  plays%}
+{% for play in  all_plays%}
 	
 
 
@@ -8,11 +6,24 @@
               <img src="{{ play.slug }}" alt="">
               <div class="overlay">
                 <time datetime="2016">{{ play.date.day }}&nbsp;/&nbsp;&nbsp;{{ play.date.month }}&nbsp;&nbsp;<span>/&nbsp;{{ play.date.year }}</span></time>
+                {# <time datetime="2016">{{ play.date }}</time> #}
                 <p class="ins3">
-                  {{ play.cat_play}} с командой {{ play.enemy_team.name }}<span>  {{ play.home_or_guest }} </span><span> {{ play.place_game.name }}</span>
+                  {{ play.cat_play}}. Встречаемся с командой 
+                {% for enemy_team in play.all_enemy_team %}  
+                  {{ enemy_team.name }}.
+                  {% endfor %}
+                  <span>  {{ play.home_or_guest }} </span><span>
+
+                   {% for place_game in play.all_place_game %} 
+                   {{ place_game.name }}
+                   {% endfor %}  
+
+                   </span>
+
                 </p>
                 <a href="#" class="btn btn-default">узнать больше</a>
               </div>
             </div>
 
 {% endfor %}            
+

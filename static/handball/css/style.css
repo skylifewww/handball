@@ -18,6 +18,11 @@ img {
   height: auto;
 }
 
+@media  imgPlayer(max-height: 227px) {
+
+}
+
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: 400;
@@ -209,7 +214,7 @@ strong {
 }
 
 [class*='fa-']:before {
-  font-weight: 400;
+  font-weight: 300;
   font-family: "FontAwesome";
 }
 
@@ -674,7 +679,6 @@ h3 + .marTop1, .h3 + .marTop1 {
 
 /*==================     Brand     ======================*/
 .navbar-brand {
-  text-align: center;
   color: #fff;
   text-align: center;
   position: relative;
@@ -1073,11 +1077,12 @@ article + article {
 }
 
 .img-thumbnail {
+
   display: inline-block;
   position: relative;
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
-  -webkit-transition: 0.4s;
+  -webkit-transition: 0.4s; 
   transition: 0.4s;
   max-width: 100%;
 }
@@ -1506,7 +1511,7 @@ article + article {
   }
 }
 /*==================   RD Mobile Menu    =====================*/
-.rd-mobilemenu {
+/*.rd-mobilemenu {
   display: none;
   position: fixed;
   top: 0;
@@ -1741,7 +1746,7 @@ article + article {
   .rd-mobilepanel_title {
     font-size: 18px;
   }
-}
+}*/
 /*==================  Stuck menu  ======================*/
 .stuck_container {
   position: relative;

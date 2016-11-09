@@ -113,6 +113,33 @@ class Play(models.Model):
             return u'Играем в гостях.'    
 
 
+class Players(models.Model):
+    name = models.CharField(max_length=250, verbose_name=u"Имя + Фамилия игрока", blank=True, default="")
+    team = models.ForeignKey(Team, null=True, blank=True, verbose_name=u"Команда игрока")
+    short_text = RichTextUploadingField(blank=True, verbose_name="Короткое описание игрока")
+    full_text = RichTextUploadingField(blank=True, verbose_name="Полное описание игрока")
+    published = models.BooleanField(verbose_name=u"Опубликован")
+    ordering = models.IntegerField(verbose_name=u"Порядок сортировки", default=0, blank=True, null=True)
+    slug = models.CharField(max_length=250, blank=True, verbose_name=u'Фото игрока')
+    
+    class Meta:
+        db_table = "players"
+        verbose_name = "Игрок"
+        verbose_name_plural = "Игроки"
+        ordering = ['ordering']
+
+    def __unicode__(self):
+        return self.name
+
+    def pic_slug(self):
+        if self.slug:
+            return u'<img src="%s" width="70"/>' % self.slug
+        else:
+            return '(none)'
+    pic_slug.short_description = u'Фото игрока'
+    pic_slug.allow_tags = True             
+
+
 class Menu(models.Model):
     name = models.CharField(max_length=200, verbose_name=u"Название")
     
@@ -151,7 +178,7 @@ class Meta(models.Model):
     favicon_slug = models.CharField(max_length=250, blank=True, verbose_name="Урл favicon")
     published = models.BooleanField(verbose_name="Опубликован", blank=True, default=0)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.meta_title
 
     class Meta:
@@ -182,7 +209,7 @@ class Snipet(models.Model):
     published = models.BooleanField(verbose_name="Опубликован")
     ordering = models.IntegerField(verbose_name="Порядок сортировки", default=0, blank=True, null=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     class Meta:

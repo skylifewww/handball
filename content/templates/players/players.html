@@ -1,0 +1,21 @@
+{% for player in  players %}
+	
+<div class="col-md-3 col-sm-6 col-xs-12">
+                  
+                    <div class="thumbnail">
+                    <a href=" ">
+                      <div class="img-thumbnail">
+                        <img class="imgPlayer" src="{{ player.slug }}" alt="">
+                      </div>  
+                      <h5>
+                        {{ player.name }}
+                      </h5>
+                      <p>
+                        {{ player.short_text|safe }} 
+                      </p>
+                    </a>  
+                    </div>
+                  
+</div>
+
+{% endfor %}     

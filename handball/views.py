@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 
 from django.views.generic import TemplateView
-from django.shortcuts import render_to_response, render, redirect
+from django.shortcuts import render_to_response, render, redirect, get_object_or_404
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.template import RequestContext
@@ -10,12 +10,24 @@ from handball.forms import *
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from django.template import Context
+from content.models import Players
+
 
 
 def index(request):
 
+    players = Players.objects.all()
+    players_all = []
+    length = int(len(players)/4)
+    for i in range(length):
+        arr = []
+        for j in range(4):
+            arr.append(players[i * 4 + j])
+        players_all.append(arr)    
 
-    return render_to_response("index.html", {'page': 1})
+
+
+    return render_to_response("index.html", {'page': 1, 'players_all': players_all, 'length': length})
 
 
 def about(request):
