@@ -52,7 +52,7 @@
     {# <link rel="stylesheet" href="{% static 'handball/css/owl-carousel/owl.theme.css' %}"> #}
      
     <!--  jQuery 1.7+  -->
-    {# // <script src="{% static 'handball/css/jquery-1.9.1.min.js' %}"></script> #}
+     <script src="{% static 'handball/css/jquery-1.10.1.min.js' %}"></script>
      
     <!-- Include js plugin -->
      {# // <script src="{% static 'handball/css/assets/owl-carousel/owl.carousel.js' %}"></script> #}
@@ -252,7 +252,7 @@
     <script src="{% static 'handball/js/jquery-mobilemenu.min.js' %}"></script>
     
   <!-- </script> -->
-<script>window.jQuery || document.write(unescape('<script src="{% static 'handball/js/jquery.js' %}"></script>'))</script>
+<script>window.jQuery || document.write(unescape('%3Cscript src="{% static 'handball/js/jquery-1.10.1.min.js' %}"%3E%3C/script%3E'))</script>
 <script type="text/javascript">
   $(document).ready(function() {
     $(".fancybox").fancybox();
