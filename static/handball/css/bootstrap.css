@@ -2096,7 +2096,7 @@ p {
   content: '';
   width: 46px;
   height: 49px;
-  /*background: url(../images/page-1_img1.jpg) no-repeat;*/
+  
   top: 0;
   left: 0;
 }
@@ -2110,10 +2110,10 @@ p {
   left: 49px;
 }
 .icon2:before {
-  /*background: url(../images/page-1_img1.jpg) no-repeat;*/
+ 
 }
 .icon3:before {
-  /*background: url(../images/page-1_img1.jpg) no-repeat;*/
+
 }
 .span_blc {
   display: block;
