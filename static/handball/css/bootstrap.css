@@ -1701,7 +1701,7 @@ hr {
                      HEADER  Section
 =========================================================*/
 header {
-  background: #000000 url(../images/hummel.jpg) no-repeat;
+  
   background-size: cover;
   -webkit-background-size: cover;
   padding-top: 64px;
