@@ -29,7 +29,7 @@ class Cat_play(models.Model):
         verbose_name = "Тип игры"
         verbose_name_plural = "Тип игр"
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
 
@@ -44,7 +44,7 @@ class Arena(models.Model):
         verbose_name = "стадион"
         verbose_name_plural = "стадионы"
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     def pic_slug(self):
@@ -68,7 +68,7 @@ class Team(models.Model):
         verbose_name = "Команда"
         verbose_name_plural = "Команды"
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     def pic_slug(self):
@@ -97,7 +97,7 @@ class Play(models.Model):
         verbose_name_plural = "Игры"
         ordering = ['date']
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     def pic_slug(self):
@@ -130,7 +130,7 @@ class Players(models.Model):
         verbose_name_plural = "Игроки"
         ordering = ['ordering']
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     def pic_slug(self):
