@@ -27,7 +27,7 @@ class TeamAdmin(admin.ModelAdmin):
     }    
 
 class PlayAdmin(admin.ModelAdmin):
-    list_display = ['name', 'cat_play', 'is_home', 'date', 'pic_slug']
+    list_display = ['name', 'cat_play', 'result', 'is_home', 'date', 'pic_slug']
     
     formfield_overrides = {
         models.ImageField: {'widget': AdminImageWidget},
@@ -50,7 +50,7 @@ class MenuAdmin(admin.ModelAdmin):
 
 class MenuItemAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
-    list_display = ['name', 'menu', 'slug', 'published', 'ordering']
+    list_display = ['name', 'menu', 'cat_play', 'slug', 'published', 'ordering']
     list_editable = ['slug', 'published', 'ordering']
 
     

@@ -34,7 +34,7 @@ h1, .h1 {
   line-height: 1.08333333;
   font-weight: 900;
   letter-spacing: 24px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 h1 small,
 h1 .small, .h1 small,
@@ -1378,7 +1378,7 @@ article + article {
   line-height: 30px;
   letter-spacing: 1.2px;
   text-align: center;
-  padding: 3px 44px 5px;
+  padding: 3px 24px 5px;
   display: inline-block;
   position: relative;
   border: 4px solid transparent;
@@ -1415,7 +1415,7 @@ article + article {
   min-width: 100%;
   margin-left: 0px;
   margin-top: 5px;
-  padding: 10px 0 10px;
+  padding: 10px 0 0px;
   background: #fff;
   z-index: 9999999;
   -moz-box-sizing: border-box;

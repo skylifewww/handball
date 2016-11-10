@@ -17,8 +17,8 @@
         <div class="container">
           <div class="navbar-header">
             <h1 class="navbar-brand">
-              <a  href="/">ГК 'Shostka'<br />
-                <small class="small-lines">команда ветеранов</small>
+              <a  href="/">'Shostka'<br />
+                <small class="small-lines">handball club</small>
               </a>
             </h1>
           </div>
@@ -43,6 +43,15 @@
                 Расписание основных игр и событий нашей команды. 
               </p>
               <ul class="marked-list">
+
+              {% for cat_play in cat_plays %}
+
+
+      <li>
+       <a href="/raspisanie/cat_plays/get/{{ cat_play.id }}/">{{ cat_play.name }}</a>
+      </li>
+
+       {% endfor %}
 
               {% raspisanie %}
               
@@ -88,9 +97,8 @@
       <section class="well well3 text-center wow fadeIn" data-wow-duration='3s'>
         <div class="container">
           <h2 class="h2_bord">
-            гандбол<br />
-            <span>команда молодости</span>
-            <small class="small-lines small-lines1">нашей!</small>            
+            'Shostka'<br />
+            <small class="small-lines small-lines1">handball</small>            
           </h2>
 
           <p class="text-primary offs3 ins2">

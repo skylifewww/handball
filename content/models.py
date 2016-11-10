@@ -29,7 +29,7 @@ class Cat_play(models.Model):
         verbose_name = "Тип игры"
         verbose_name_plural = "Тип игр"
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -44,7 +44,7 @@ class Arena(models.Model):
         verbose_name = "стадион"
         verbose_name_plural = "стадионы"
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def pic_slug(self):
@@ -68,7 +68,7 @@ class Team(models.Model):
         verbose_name = "Команда"
         verbose_name_plural = "Команды"
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def pic_slug(self):
@@ -83,9 +83,11 @@ class Team(models.Model):
 class Play(models.Model):
     name = models.CharField(max_length=250, verbose_name=u"Название игры", blank=True, default="")
     cat_play = models.ForeignKey(Cat_play, null=True, blank=True, verbose_name=u"Тип игры")
+    team = models.ManyToManyField(Team, blank=True, related_name='team', verbose_name=u"Команда")
     enemy_team = models.ManyToManyField(Team, blank=True, related_name='enemy', verbose_name=u"Команда противник")
     place_game = models.ManyToManyField(Arena, blank=True, related_name='arena', verbose_name=u"Место встречи")
     is_home = models.BooleanField(verbose_name=u"Играем дома?")
+    result = models.CharField(max_length=250, verbose_name=u"результат игры", blank=True, default="")
     date = models.DateTimeField(verbose_name=u"Дата игры")
     slug = models.CharField(max_length=250, blank=True, verbose_name=u'Картинка игры')
     
@@ -95,7 +97,7 @@ class Play(models.Model):
         verbose_name_plural = "Игры"
         ordering = ['date']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def pic_slug(self):
@@ -128,7 +130,7 @@ class Players(models.Model):
         verbose_name_plural = "Игроки"
         ordering = ['ordering']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def pic_slug(self):
@@ -152,6 +154,7 @@ class Menu(models.Model):
 class MenuItem(MPTTModel):
     menu = models.ForeignKey(Menu, null=True, blank=True, verbose_name=u"Меню")
     name = models.CharField(max_length=200, verbose_name=u"Название")
+    cat_play = models.ForeignKey(Cat_play, null=True, blank=True, verbose_name=u"Тип игры")
     slug = models.CharField(max_length=250, blank=True, verbose_name=u"Урл")
     full_text = RichTextField(blank=True, verbose_name="Полное описание")
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children', verbose_name=u"Родительский пункт меню")

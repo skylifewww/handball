@@ -1858,7 +1858,7 @@ h1,
   line-height: 1.08333333;
   font-weight: 800;
   letter-spacing: 24px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 h1 small,
 .h1 small,

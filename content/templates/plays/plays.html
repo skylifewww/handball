@@ -8,7 +8,13 @@
                 <time datetime="2016">{{ play.date.day }}&nbsp;/&nbsp;&nbsp;{{ play.date.month }}&nbsp;&nbsp;<span>/&nbsp;{{ play.date.year }}</span></time>
                 {# <time datetime="2016">{{ play.date }}</time> #}
                 <p class="ins3">
-                  {{ play.cat_play}}. Встречаемся с командой 
+                  {{ play.cat_play}}. 
+
+                  {% for team in play.all_team %}  
+                  {{ team.name }}.
+                  {% endfor %}
+
+                  встречается с командой 
                 {% for enemy_team in play.all_enemy_team %}  
                   {{ enemy_team.name }}.
                   {% endfor %}

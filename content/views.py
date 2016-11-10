@@ -3,6 +3,7 @@
 from django.http.response import Http404
 from django.shortcuts import render_to_response, redirect
 from content.models import *
+from content.templatetags.content_tags import load_related_m2m
 from django.core.exceptions import ObjectDoesNotExist
 # from article.forms import CommentForm
 from django.template.context_processors import csrf
@@ -28,12 +29,16 @@ from django.template import loader, Context, RequestContext
 
 
 
-def plays(request):
+def plays(request, cat_play_id):
     
-    # args = {}
-    # args['username'] = auth.get_user(request).username     
+    current_cat_play = Cat_play.objects.get(id=cat_play_id)
+    all_plays = Play.objects.filter(cat_play_id=current_cat_play.id)    
 
-    return render_to_response("plays.html")   
+    load_related_m2m(all_plays, 'team')
+    load_related_m2m(all_plays, 'enemy_team')
+    load_related_m2m(all_plays, 'place_game')
+
+    return render_to_response("plays.html", {"all_plays": all_plays, "cat_play": current_cat_play})   
 
 
 

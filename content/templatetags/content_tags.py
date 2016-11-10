@@ -104,6 +104,7 @@ def plays():
     
     all_plays = Play.objects.all()[:4]
     
+    load_related_m2m(all_plays, 'team')
     load_related_m2m(all_plays, 'enemy_team')
     load_related_m2m(all_plays, 'place_game')
     
