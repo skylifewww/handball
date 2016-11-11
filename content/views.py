@@ -27,6 +27,15 @@ from django.template import loader, Context, RequestContext
 # from suds.client import Client
 
 
+def raspisanie(request):
+    
+    all_plays = Play.objects.all()    
+
+    load_related_m2m(all_plays, 'team')
+    load_related_m2m(all_plays, 'enemy_team')
+    load_related_m2m(all_plays, 'place_game')
+
+    return render_to_response("plays.html", {"all_plays": all_plays, "page": 6})   
 
 
 def plays(request, cat_play_id):

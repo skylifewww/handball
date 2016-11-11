@@ -1535,8 +1535,8 @@ th {
 }
 @media (max-width: 991px) {
   .row .col-sm-12 {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 0px;
   }
 }
 @media (max-width: 991px) {
@@ -5664,12 +5664,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-align: center;
   font-size: 24px;
   letter-spacing: 1.2px;
-  margin-left: 15px;
+  margin-left: 5px;
 }
 @media (min-width: 768px) {
   .navbar-nav > li {
     float: left;
-    width: 19.2%;
+    width: 19.4%;
   }
   .navbar-nav > li > a {
     padding: 3px 19% 5px;

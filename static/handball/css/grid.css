@@ -169,6 +169,15 @@ input[type='number'] {
 [class*="col-"] {
   margin-top: 30px;
 }
+.col-md-14 {
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+[class*="col-"] {
+  /*margin-: 30px;*/
+}
 
 .row {
   margin-top: -30px;
@@ -534,7 +543,7 @@ input[type='number'] {
 }
 @media (min-width: 1200px) {
   [class*="col-"] {
-    margin-top: 30px;
+    margin-top: 0px;
   }
 
   .row {

@@ -608,6 +608,10 @@ h3 + .marTop1, .h3 + .marTop1 {
   }
 }
 
+.insCenter {
+  text-align: center;
+}
+
 .ins1 {
   padding-right: 10%;
 }
@@ -1340,7 +1344,6 @@ article + article {
 .box_cnt__no-flow {
   overflow: hidden;
 }
-
 /*========================   Menu   ==========================*/
 .menu-holder {
   text-align: center;
@@ -1415,7 +1418,7 @@ article + article {
   min-width: 100%;
   margin-left: 0px;
   margin-top: 5px;
-  padding: 10px 0 0px;
+  padding: 10px 0 10px;
   background: #fff;
   z-index: 9999999;
   -moz-box-sizing: border-box;
@@ -1510,6 +1513,7 @@ article + article {
     display: none;
   }
 }
+
 /*==================   RD Mobile Menu    =====================*/
 .rd-mobilemenu {
   display: none;

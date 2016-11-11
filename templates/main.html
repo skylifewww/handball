@@ -124,27 +124,17 @@
                   <a href="/about/">О нас</a>
                 </li>
                 {% endif %}
-                 
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a href="#">История </a>
-                    </li>
-                    <li>
-                      <a href="#">Наше предложение </a>                      
-                    </li>
-                    <li>
-                      <a href="#">Новости</a>
-                        <ul class="dropdown-menu">
-                          <li>
-                            <a href="#">Свежие</a>
-                          </li>
-                          <li>
-                            <a href="#">Архив</a>
-                          </li>                      
-                        </ul>
-                    </li>
-                  </ul>
+
+                  {% if page == 6 %}
+                <li class="active">
+                  <a href="/raspisanie/">Игры</a>
                 </li>
+                {% else %} 
+                 <li>
+                  <a href="/raspisanie/">Игры</a>
+                </li>
+                {% endif %}
+                 
 
                   {% if page == 4 %}
                 <li class="active">
@@ -153,17 +143,6 @@
                 {% else %} 
                  <li>
                   <a href="/gallery/">Фото</a>
-                </li>
-                {% endif %}
-                
-
-                   {% if page == 3 %}
-                <li class="active">
-                  <a href="/events/">События</a>
-                </li>
-                {% else %} 
-                 <li>
-                  <a href="/events/">События</a>
                 </li>
                 {% endif %}
 
