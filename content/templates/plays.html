@@ -33,21 +33,33 @@
 
        {% for play in all_plays %}
 
+
+
         <div class="container">
+
+        <p class="text-info ins1">
+                {{ play.date }}
+                 {% for place_game in play.all_place_game %} 
+                   <span> &nbsp;  {{ place_game.name }}</span>
+                   {% endfor %} 
+              </p>
+              
           <div class="row">
 
          
 
 
             <div class="col-md-4 col-sm-12 col-xs-12">
-              <h3 class="text-center">
+
+            <h3 class="text-center">
+              
               {% if play.is_home %}
 
              {% for team in play.all_team %}  
                   {{ team.name }}
                   {% endfor %}
 
-            {% else%}
+            {% else %}
 
             {% for enemy_team in play.all_enemy_team %}  
                   {{ enemy_team.name }}
@@ -76,15 +88,18 @@
                   {{ enemy_team.name }}
                   {% endfor %}
 
-            {% else%}
+            {% else %}
 
             {% for team in play.all_team %}  
                   {{ team.name }}
                   {% endfor %}
 
             {% endif %}
+
      
           </h3>
+         
+           
             </div>
 
            
@@ -92,6 +107,13 @@
 
           </div>
         </div>
+
+        <h3 class="text-center">
+             
+          </h3>
+          <h3 class="text-center">
+             
+          </h3>
          
 <h3 class="text-center">
              
@@ -106,6 +128,9 @@
              
           </h3>
       </section>
+      <h3 class="text-center">
+             
+          </h3>
 
 
 
